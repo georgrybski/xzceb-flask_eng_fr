@@ -1,5 +1,7 @@
+"""Module for performing english-to-french and french-to-english
+translations using IBM's  Watson translator."""
+
 import os
-import json
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from dotenv import load_dotenv
@@ -18,7 +20,13 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(url)
 
 def english_to_french(english_text):
-    #write the code here
+    """Translate English text to French.
+
+    Args:
+        str: The English text to translate.
+
+    Returns:
+        str: The translated French text."""
     if not english_text:
         return None
 
@@ -30,7 +38,13 @@ def english_to_french(english_text):
     return french_text
 
 def french_to_english(french_text):
-    #write the code here
+    """Translate French text to English.
+
+    Args:
+        str: The French text to translate.
+
+    Returns:
+        str: The translated English text."""
     if not french_text:
         return None
 
